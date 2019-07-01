@@ -1,4 +1,4 @@
-# text-detection-ctpn UBUNTU Implementation
+# Text-detection-ctpn UBUNTU Implementation
 
 Scene text detection based on ctpn (connectionist text proposal network). It is implemented in tensorflow. The origin paper can be found [here](https://arxiv.org/abs/1609.03605). Also, the origin repo in caffe can be found in [here](https://github.com/tianzhi0549/CTPN). For more detail about the paper and code, see this [blog](http://slade-ruan.me/2017/10/22/text-detection-ctpn/). If you got any questions, check the issue first, if the problem persists, open a new issue.
 ***
@@ -26,8 +26,49 @@ It will generate a nms.so and a bbox.so in current folder.
 - put checkpoints_mlt/ in text-detection-ctpn/
 - put your images in data/demo, the results will be saved in data/res, and run demo in the root 
 ```shell
-python ./main/demo.py
+python ./main/demo.py model_checkpoint_path checkpoints_mlt/
 ```
+
+```
+(tensorflow_p36) ubuntu@ip-172-31-41-142:~/ajinkya/text-detection-ctpn$ python ./main/demo.py model_checkpoint_path checkpoints_mlt/
+WARNING:tensorflow:From /home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/ubuntu/ajinkya/text-detection-ctpn/nets/model_train.py:30: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/ubuntu/ajinkya/text-detection-ctpn/nets/model_train.py:33: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+Restore from checkpoints_mlt/ctpn_50000.ckpt
+WARNING:tensorflow:From /home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1272: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+Find 5 images
+===============
+data/demo/006.jpg
+cost time: 7.82s
+===============
+data/demo/008.jpg
+cost time: 1.04s
+===============
+data/demo/010.png
+cost time: 3.53s
+===============
+data/demo/009.jpg
+cost time: 0.92s
+===============
+data/demo/007.jpg
+cost time: 4.08s
+
+
+```
+
+
+
 ***
 # training
 ## prepare data
