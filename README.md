@@ -11,7 +11,7 @@ Scene text detection based on ctpn (connectionist text proposal network). It is 
 - [x] oriented text connector
 - [x] BLSTM
 ***
-# setup
+# Setup
 nms and bbox utils are written in cython, hence you have to build the library first.
 ```shell
 cd utils/bbox
@@ -20,7 +20,7 @@ chmod +x make.sh
 ```
 It will generate a nms.so and a bbox.so in current folder.
 ***
-# demo
+# Demo
 - follow setup to build the library 
 - download the ckpt file from [googl drive](https://drive.google.com/file/d/1HcZuB_MHqsKhKEKpfF1pEU85CYy4OlWO/view?usp=sharing) or [baidu yun](https://pan.baidu.com/s/1BNHt_9fiqRPGmEXPaxaFXw)
 - put checkpoints_mlt/ in text-detection-ctpn/
@@ -66,9 +66,6 @@ cost time: 4.08s
 
 
 ```
-
-
-
 ***
 # training
 ## prepare data
