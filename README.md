@@ -24,11 +24,11 @@ It will generate a nms.so and a bbox.so in current folder.
 - put checkpoints_mlt/ in text-detection-ctpn/
 - put your images in data/demo, the results will be saved in data/res, and run demo in the root 
 ```shell
-python ./main/demo.py model_checkpoint_path checkpoints_mlt/
+python3 ./main/demo.py model_checkpoint_path checkpoints_mlt/
 ```
 
 ```
-(tensorflow_p36) ubuntu@ip-172-31-41-142:~/ajinkya/text-detection-ctpn$ python ./main/demo.py model_checkpoint_path checkpoints_mlt/
+(tensorflow_p36) ubuntu@ip-172-31-41-142:~/ajinkya/text-detection-ctpn$ python3 ./main/demo.py model_checkpoint_path checkpoints_mlt/
 WARNING:tensorflow:From /home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.
@@ -72,7 +72,7 @@ cost time: 4.08s
 - Also, you can prepare your own dataset according to the following steps. 
 - Modify the DATA_FOLDER and OUTPUT in utils/prepare/split_label.py according to your dataset. And run split_label.py in the root
 ```shell
-python ./utils/prepare/split_label.py
+python3 ./utils/prepare/split_label.py
 ```
 - it will generate the prepared data in data/dataset/output folder
 - The input file format demo of split_label.py can be found in [gt_img_859.txt](https://github.com/eragonruan/text-detection-ctpn/blob/banjin-dev/data/readme/gt_img_859.txt). And the output file of split_label.py is [img_859.txt](https://github.com/eragonruan/text-detection-ctpn/blob/banjin-dev/data/readme/img_859.txt). A demo image of the prepared data is shown below.
