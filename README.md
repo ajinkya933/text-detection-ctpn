@@ -1,15 +1,9 @@
 # Text-detection-ctpn UBUNTU Implementation
 
-Scene text detection based on ctpn (connectionist text proposal network). It is implemented in tensorflow. The origin paper can be found [here](https://arxiv.org/abs/1609.03605). Also, the origin repo in caffe can be found in [here](https://github.com/tianzhi0549/CTPN). For more detail about the paper and code, see this [blog](http://slade-ruan.me/2017/10/22/text-detection-ctpn/). If you got any questions, check the issue first, if the problem persists, open a new issue.
 ***
 **NOTICE: Thanks to [banjin-xjy](https://github.com/banjin-xjy), banjin and I have reonstructed this repo. The old repo was written based on Faster-RCNN, and remains tons of useless code and dependencies, make it hard to understand and maintain. Hence we reonstruct this repo. The old code is saved in [branch master](https://github.com/eragonruan/text-detection-ctpn/tree/master)**
 ***
-# roadmap
-- [x] reonstruct the repo
-- [x] cython nms and bbox utils
-- [x] loss function as referred in paper
-- [x] oriented text connector
-- [x] BLSTM
+
 ***
 # Setup
 nms and bbox utils are written in cython, hence you have to build the library first.
@@ -18,6 +12,10 @@ cd utils/bbox
 chmod +x make.sh
 ./make.sh
 ```
+```
+go in make.sh and replace python by python3
+```
+
 It will generate a nms.so and a bbox.so in current folder.
 ***
 # Demo
@@ -76,7 +74,7 @@ cost time: 4.08s
 ```shell
 python ./utils/prepare/split_label.py
 ```
-- it will generate the prepared data in data/dataset/
+- it will generate the prepared data in data/dataset/output folder
 - The input file format demo of split_label.py can be found in [gt_img_859.txt](https://github.com/eragonruan/text-detection-ctpn/blob/banjin-dev/data/readme/gt_img_859.txt). And the output file of split_label.py is [img_859.txt](https://github.com/eragonruan/text-detection-ctpn/blob/banjin-dev/data/readme/img_859.txt). A demo image of the prepared data is shown below.
 <img src="/data/readme/demo_split.png" width=640 height=480 />
 
@@ -84,7 +82,7 @@ python ./utils/prepare/split_label.py
 ## train 
 Simplely run
 ```shell
-python ./main/train.py
+python3 ./main/train.py
 ```
 - The model provided in checkpoints_mlt is trained on GTX1070 for 50k iters. It takes about 0.25s per iter. So it will takes about 3.5 hours to finished 50k iterations.
 ***
