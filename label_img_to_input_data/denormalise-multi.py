@@ -14,7 +14,7 @@ def extract_coords(list_of_xmls):
 	#l=[]
 
 	    with open(item) as f: root = ET.parse(f)
-	    xml_raw = open(item+".txt", "w")
+	    xml_raw = open(item[:-4]+".txt", "w")
 
 	    
 	    for obj in root.findall('object'):
@@ -46,9 +46,6 @@ def remove_char(list_of_txt):
 
 
 		#print(item)
-
-
-
 path = os.getcwd()
 print(path)
 os.chdir(path)
