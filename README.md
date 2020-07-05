@@ -5,10 +5,6 @@ I can do the entire setup of this repo for you personally. If you are interested
 # Text-detection-ctpn UBUNTU Implementation
 
 ***
-**NOTICE: Thanks to [banjin-xjy](https://github.com/banjin-xjy), banjin and I have reonstructed this repo. The old repo was written based on Faster-RCNN, and remains tons of useless code and dependencies, make it hard to understand and maintain. Hence we reonstruct this repo. The old code is saved in [branch master](https://github.com/eragonruan/text-detection-ctpn/tree/master)**
-***
-
-***
 # Setup
 nms and bbox utils are written in cython, hence you have to build the library first.
 ```shell
