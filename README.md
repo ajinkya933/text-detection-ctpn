@@ -1,3 +1,7 @@
+# Hire me:
+I can do the entire setup of this repo for you personally. If you are interested write me an email at ajinkyabobade93@gmail.com
+
+
 # Text-detection-ctpn UBUNTU Implementation
 
 ***
